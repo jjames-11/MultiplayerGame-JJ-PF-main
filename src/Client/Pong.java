@@ -109,7 +109,7 @@ public class Pong extends JPanel implements KeyListener{
                 break;
         }
     }
-
+// 
     public void keyPressed(KeyEvent e) {
         // to access and modify the instance variables of PONG, we are going to call this method from game class:
         int keyCode = e.getKeyCode();
