@@ -5,7 +5,7 @@ public class square {
     
     int x;
     int y;
-    boolean hit = true;
+    boolean hit = false;
 
     public square(int x, int y){
         this.x = x;

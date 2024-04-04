@@ -23,7 +23,7 @@ public class Game {
 
     static String connectionStatus = "not connected";
     final  boolean DEBUG = true;
-    Pong pongGame;
+    Battleship battleshipGame;
     Client c;
     boolean paused = true;
     JLabel playerCnt;
@@ -40,7 +40,7 @@ public class Game {
     }
 
     public Game(){
-        pongGame = new Pong();
+        battleshipGame = new Battleship();
     }
         
     public void createAndShowGUI(){
@@ -85,7 +85,7 @@ public class Game {
                 System.out.println("Let's try to connect: ");
                 
                 try {
-                    c = new Client(Integer.parseInt(portText.getText()), userText.getText(), pongGame, ipText.getText());
+                    c = new Client(Integer.parseInt(portText.getText()), userText.getText(), battleshipGame, ipText.getText());
                     connStatus.setText( connectionStatus = "connected");
                     connectBtn.setText("Connected");
                     connectBtn.setEnabled(false);
@@ -138,7 +138,7 @@ public class Game {
         }
 // ************ END CONSOLE THINGY *********//
 
-        window.add(pongGame, BorderLayout.SOUTH);
+        window.add(battleshipGame, BorderLayout.SOUTH);
 
 
         window.pack();
@@ -154,10 +154,8 @@ public class Game {
         // game loop
         while (true) {
             if (!paused){
-                // pongGame.moveball();
-                // pongGame.movePaddles();
                 // pongGame.checkCollisions();
-                pongGame.repaint();
+                battleshipGame.repaint();
 
                 // playerCnt.setText(""+pongGame.getPlayerCount());
                 
@@ -171,3 +169,6 @@ public class Game {
          }
     }
 }
+// TODO:
+// move()
+// keylistener()

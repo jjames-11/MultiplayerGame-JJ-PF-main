@@ -22,11 +22,11 @@ public class Client implements Runnable {
     ObjectOutputStream objectOut;
     ObjectInputStream objectIn;
     
-    Pong pongGame;
+    Battleship battleshipGame;
 
 
 
-    public Client(int port, String u, Pong game, String ipString ) throws Exception{
+    public Client(int port, String u, Battleship game, String ipString ) throws Exception{
         // getting localhost ip 
         InetAddress ip = InetAddress.getByName(ipString); 
       
@@ -36,7 +36,7 @@ public class Client implements Runnable {
         this.user = u;
 
         // make sure we have a reference to the game that will be played
-        this.pongGame = game;
+        this.battleshipGame = game;
 
     }
 
